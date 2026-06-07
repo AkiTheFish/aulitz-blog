@@ -2,7 +2,9 @@
 
 :root {
     font-size: 8px;
-    background-color: #180425;
+    background-image: url("../img/bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow-x: hidden;
 }
 
@@ -30,36 +32,54 @@ body {
     justify-content: flex-end;
     align-items: center;
 
+    background-color: #18042577;
+
     list-style: none;
 
-    background-color: #b160b1;
-    border-radius: 0 0 10rem 10rem;
-    opacity: 75%;
-
-    box-shadow: 1rem 1rem 0.4rem 1rem rgba(0, 0, 0, 0.335);
+    box-shadow: 0.4rem 0.4rem 0.07rem #3b0a5b84;
 }
 
 .navbar * {
     margin: 2rem;
     text-decoration: none;
     font-size: 3rem;
-    text-shadow: 0.4rem 0.4rem rgba(0, 0, 0, 0.568);
+    text-shadow: 0 0 2rem #e68aff;
 }
 
-.navbar li {
-    background-color: #793279;
-    border-radius: 3rem;
+.navbar li a {
+    color: rgb(235, 184, 255);
+    text-shadow: 0 0 1.5rem #e68aff;
+
+    opacity: 0.6;
+
+    transition: 0.3s;
+}
+
+.navbar li a:hover {
+    text-shadow:
+        0 0 0.125rem #fff,
+        0 0 0.25rem  #e68aff,
+        0 0 0.5rem   #e68affdd,
+        0 0 1rem     #e68affcc,
+        0 0 2rem     #e68affaa,
+        0 0 4rem     #e68aff77,
+        0 0 8rem     #e68aff44;
+    opacity: 1;
+}
+
+.navbar .contact-button {
     padding: 1.5rem;
-    box-shadow: 0.5rem 0.5rem 0.2rem #0000009a;
-}
 
-.navbar li:hover {
-    background-color: #622962;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0.2rem #e68aff;
 }
-
 .navbar h1 {
     margin-right: auto;
     font-size: 4rem;
+
+    opacity: 80%;
+
+    color: rgb(235, 184, 255);
 }
 
 .waves {
@@ -70,5 +90,5 @@ body {
     z-index: -1;
     left: 0;
     bottom: 0;
-    opacity: 50%;
+    opacity: 40%;
 }
