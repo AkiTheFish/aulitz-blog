@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     font-size: 8px;
@@ -36,7 +37,7 @@ body {
 
     list-style: none;
 
-    box-shadow: 0.4rem 0.4rem 0.07rem #3b0a5b84;
+    box-shadow: 0 0 2rem 0.4rem #a318ca84;
 }
 
 .navbar * {
@@ -79,7 +80,60 @@ body {
 
     opacity: 80%;
 
-    color: rgb(235, 184, 255);
+    color: #ebb8ff;
+}
+
+.hero-text {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-text * {
+    color: #ebb8ff;
+    text-shadow: 0 0 2rem #e68aff;
+}
+
+.hero-text h1 {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15rem;
+
+    text-align: center;
+
+    animation: hero-in 3s ease-out both;
+}
+
+.hero-text h2 {
+    font-family: "Playfair Display";
+    font-weight: lighter;
+    font-size: 4rem;
+    margin-top: 4rem;
+
+    animation: hero-in 3s ease-out both;
+    animation-delay: 1s;
+
+    opacity: 60%;
+}
+
+@keyframes hero-in {
+    0% {
+        opacity: 0%;
+        transform: translateY(20vh);
+    }
+
+    30% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translate(0);
+    }
 }
 
 .waves {
@@ -89,6 +143,27 @@ body {
     background-position: center;
     z-index: -1;
     left: 0;
-    bottom: 0;
+    bottom: -4rem;
     opacity: 40%;
+}
+
+#wave1 {
+    animation: wave-enter 1s ease-out both;
+}
+#wave2 {
+    animation: wave-enter 1s ease-out both;
+    animation-delay: 0.2s;
+}
+#wave3 {
+    animation: wave-enter 1s ease-out both;
+    animation-delay: 0.4s;
+}
+
+@keyframes wave-enter {
+    0% {
+        transform: translateY(50vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
