@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     font-size: 8px;
     background-image: url("../img/bg.svg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     overflow-x: hidden;
 }
@@ -114,7 +115,7 @@ body {
     font-size: 4rem;
     margin-top: 4rem;
 
-    animation: hero-in 3s ease-out both;
+    animation: hero-sub-in 3s ease-out both;
     animation-delay: 1s;
 
     opacity: 60%;
@@ -136,6 +137,22 @@ body {
     }
 }
 
+@keyframes hero-sub-in {
+    0% {
+        opacity: 0%;
+        transform: translateY(20vh);
+    }
+
+    30% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 60%;
+        transform: translate(0);
+    }
+}
+
 .waves {
     position: fixed;
     width: 100%;
@@ -143,27 +160,165 @@ body {
     background-position: center;
     z-index: -1;
     left: 0;
-    bottom: -4rem;
-    opacity: 40%;
+    bottom: var(--wave-bottom);
+    opacity: 80%;
+
 }
 
 #wave1 {
-    animation: wave-enter 1s ease-out both;
+    animation: wave-enter 1.5s ease-out both;
 }
 #wave2 {
-    animation: wave-enter 1s ease-out both;
-    animation-delay: 0.2s;
+    animation: wave-enter 1.5s ease-out both;
+    animation-delay: 0.5s;
 }
 #wave3 {
-    animation: wave-enter 1s ease-out both;
-    animation-delay: 0.4s;
+    animation: wave-enter 1.5s ease-out both;
+    animation-delay: 1s;
 }
 
 @keyframes wave-enter {
     0% {
-        transform: translateY(50vh);
+        transform: translateY(70vh);
     }
     100% {
         transform: translateY(0);
     }
+}
+
+.text-container {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    width: clamp(3vw, 50vw, 90vw);
+    padding: 4rem;
+
+    text-align: justify;
+}
+
+.text * {
+    position: relative;
+
+    font-family: "Noto Serif";
+    z-index: -2;
+
+    margin: 3rem 0 3rem 0;
+
+    animation: fade-in 3s ease;
+
+    color: #ebb8ff;
+}
+
+.hero-blog {
+    position: relative;
+    display: grid;
+}
+
+.hero-blog h2 {
+    position: relative;
+
+    margin: 10rem;
+
+    grid-area: 1 / 1;
+    z-index: 1;
+
+    text-align: left;
+    color: #f6e0ff;
+    font-size: 7rem;
+
+    text-shadow: 0.2rem 0.2rem 1rem #330041;
+
+    animation: hero-text 1.5s ease-out forwards;
+}
+
+.hero-blog a {
+    color: #d771ff;
+}
+
+.text h4 {
+    font-size: 2.7rem;
+    opacity: 50%;
+}
+
+.text h3 {
+    font-size: 2.7rem;
+    color: #691f86;
+}
+
+.text p {
+    font-size: 2.5rem;
+}
+
+.text p:last-child {
+    margin-bottom: 40vh;
+}
+
+#line {
+    background-color: #650081;
+
+    height: 0.65rem;
+    width: 20rem;
+    border-radius: 3rem;
+}
+
+#img1 {
+    position: relative;
+    z-index: -1;
+
+    grid-area: 1 / 1;
+
+    width: 100vw;
+    height: 65vh;
+
+    object-fit: cover;
+}
+
+.text img {
+    width: inherit;
+    margin: 8rem 0 8rem 0;
+    border-radius: 1rem;
+}
+
+@keyframes hero-text {
+    from {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(40rem);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.info-container {
+    margin: 8rem;
+}
+
+.info-container * {
+    color: #ebb8ff;
+    text-shadow: 0 0 2rem #e68aff;
+
+    font-size: 5rem;
+}
+
+.info-container p {
+    font-size: 2rem;
 }
